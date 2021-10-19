@@ -11,7 +11,6 @@ script:
 after_success:
   - sh .travis/deploy_dockerhub.sh
   - test "$TRAVIS_BRANCH" = "master" && test "$TRAVIS_PULL_REQUEST" = "false" 
-    && sh .travis/deploy_heroku.sh
 
 notifications:
   email:
