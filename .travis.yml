@@ -10,3 +10,4 @@ script:
 
 after_success:
   - sh .travis/deploy_dockerhub.sh 
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
