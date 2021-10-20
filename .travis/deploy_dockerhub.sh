@@ -5,6 +5,8 @@ if [ "$TRAVIS_BRANCH" = "master" ]; then
 else
     TAG="$TRAVIS_BRANCH"
 fi
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
 docker build -f Dockerfile -t dimshimdim/cicd-1:$TAG .
 docker push dimshimdim/cicd-1:$TAG
+
+echo "Docker complete!"
